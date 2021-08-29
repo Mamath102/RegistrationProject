@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registered Records</title>
+</head>
+<body>
+<div align="center">
+    <h1>Registration Details</h1>
+    <table border="2">
+        <thead>
+        <th>Name</th>
+        <th>Email-Id</th>
+        <th>Mobile Number</th>
+        <th>Actions</th>
+        </thead>
+        {%for r in register_list %}
+        <tr>
+            <td>{{r.name}}</td>
+            <td>{{r.email}}</td>
+            <td>{{r.mobile_Number}}</td>
+            <td><a href="/update/{{r.id}}" class="btn btn-primary">Update</a>&nbsp<a href="/delete/{{r.id}}" class="btn btn-primary">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
